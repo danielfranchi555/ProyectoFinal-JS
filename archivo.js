@@ -13,8 +13,8 @@ function renderizarProductos() {
     //renderizamos los productos 
    console.log(productosJSON)
     for (const prod of productosJSON) {
-        document.getElementById("miLista").innerHTML+=`<li class= "col-sm-3 list-group-item">
-        <img src="${prod.img}"width="250px" height="250px">
+        document.getElementById("miLista").innerHTML+=`<li class="col-sm-3 list-group-item">
+        <img src="${prod.img}"width="250" height="250">
         <p>Producto:${prod.nombre}</p>
         <p>Precio:${prod.precio}</p>
         <button class="btn css-button-fully-rounded--sky" id="btn${prod.id}">COMPRAR</button>
@@ -69,7 +69,7 @@ function agregarACarrito(productoNuevo) {
         //con querySelector falla
         document.getElementById(productoNuevo.id).innerHTML=carrito[posicion].cantidad;
     }
-    document.querySelector("#gastoTotal").innerText=(`Total: $ ${CalcularTotal()}`);
+    document.getElementById("gastoTotal").innerText=(`Total: $ ${CalcularTotal()}`);
 
 }
 
@@ -113,7 +113,7 @@ function eliminar(id){
 //GETJSON de productos.json         
 async function obtenerJSON() {
     const URLJSON="/productos.json"
-    const resp=await fetch("/productos.json")
+    const resp=await fetch("productos.json")
     const data= await resp.json()
     productosJSON = data;
     renderizarProductos();
