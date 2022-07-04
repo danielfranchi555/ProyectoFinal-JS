@@ -1,14 +1,12 @@
 let carrito = [];
 let productosJSON = [];
-//  let dolarCompra;
 
-//  window.onload=()=>{
-//      document.querySelector("#fila_prueba").style.background="red";
-//      obtenerValorDolar();
-//      document.querySelector("#miSeleccion option[value='pordefecto']").setAttribute("selected", true);
-//      document.querySelector("#miSeleccion").onchange=()=>ordenar();
-//  };
-
+  window.onload=()=>{
+      document.querySelector("#fila_prueba").style.background="red";
+      o
+      document.querySelector("#miSeleccion option[value='pordefecto']").setAttribute("selected", true);
+      document.querySelector("#miSeleccion").onchange=()=>ordenar();
+  };
 
 
 
@@ -17,26 +15,28 @@ function renderizarProductos() {
     //renderizamos los productos 
    console.log(productosJSON)
     for (const prod of productosJSON) {
-        document.querySelector(".milista").innerHTML+=(`<li class="col-sm-3 list-group-item">
+        document.getElementById("miLista").innerHTML+=`<li class="col-sm-3 list-group-item">
         <img src="${prod.img}"width="250px" height="250px">
-        <p>Producto: ${prod.nombre}</p>
-        <p>Precio $ ${prod.precio}</p>
-        <button class="btn btn-danger" id='btn${prod.id}'>COMPRAR</button>
-    </li>`);
+        <p>Producto:${prod.nombre}</p>
+        <p>Precio:${prod.precio}</p>
+        <button class="btn css-button-fully-rounded--sky" id="btn${prod.id}">COMPRAR</button>
+        </li>`;
     }
     //EVENTOS
     for (const prod of productosJSON) {
          //Evento para cada boton
-         document.querySelector(`#btn${prod.id}`).onclick= function() {
+         document.getElementById(`btn${prod.id}`).onclick= function() {
             agregarACarrito(prod);
         };
     }
 }
 
+
+
 class ProductoCarrito {
     constructor(objProd) {
         this.id = objProd.id;
-        this.foto = objProd.foto;
+        this.img = objProd.foto;
         this.nombre = objProd.nombre;
         this.precio = objProd.precio;
         this.cantidad = 1;
@@ -44,7 +44,7 @@ class ProductoCarrito {
 }
 
 function agregarACarrito(productoNuevo) {
-    let encontrado = carrito.find(p => p.id == productoNuevo.id);
+    let encontrado =carrito.find(p =>p.id == productoNuevo.id);
     console.log(encontrado);
     if (encontrado == undefined) {
         let prodACarrito = new ProductoCarrito(productoNuevo);
@@ -71,14 +71,14 @@ function agregarACarrito(productoNuevo) {
         //con querySelector falla
         document.getElementById(productoNuevo.id).innerHTML=carrito[posicion].cantidad;
     }
-    document.querySelector("#gastoTotal").innerText=(`Total: $ ${calcularTotal()}`);
+    document.querySelector("#gastoTotal").innerText=(`Total: $ ${CalcularTotal()}`);
 
 }
 
-function calcularTotal() {
+function CalcularTotal() {
     let suma = 0;
     for (const elemento of carrito) {
-        suma = suma + (elemento.precio * elemento.cantidad);
+        suma = suma + (elemento.precio*elemento.cantidad);
     }
     return suma;
 }
@@ -88,7 +88,7 @@ function eliminar(id){
     carrito.splice(indice,1);
     let fila=document.getElementById(`fila${id}`);
     document.getElementById("tablabody").removeChild(fila);
-    document.querySelector("#gastoTotal").innerText=(`Total: $ ${calcularTotal()}`);
+    document.querySelector("#gastoTotal").innerText=(`Total: $ ${CalcularTotal()}`);
 }
 
  function ordenar() {
@@ -107,25 +107,58 @@ function eliminar(id){
              return a.nombre.localeCompare(b.nombre);
          });
      }
-     document.querySelector(".milista").innerHTML="";
-     renderizarProductos();
- }
+     document.getElementById("miLista").innerHTML="";
+     renderizarProductos()
+ } 
+   
 
-//GETJSON de productos.json
+//GETJSON de productos.json         
 async function obtenerJSON() {
     const URLJSON="/productos.json"
-    const resp=await fetch("productos.json")
+    const resp=await fetch("/productos.json")
     const data= await resp.json()
     productosJSON = data;
     renderizarProductos();
 }
+obtenerJSON();
 
 
-//  async function obtenerValorDolar() {
-//      const URLDOLAR = "https://api-dolar-argentina.herokuapp.com/api/dolarblue";
-//      const resp=await fetch(URLDOLAR)
-//      const data=await resp.json()
-//      document.querySelector("#fila_prueba").innerHTML+=(`<p align="center">Dolar compra: $ ${data.compra}  Dolar venta: $ ${data.venta}</p>`);
-//      dolarCompra = data.compra;
-//      obtenerJSON();
-//  }
+/* var typed = new Typed('.typed', {
+    // Waits 1000ms after typing "First"
+    strings: ['E commerce ^1000 Javascript.',]
+  });
+ */
+  var typed = new Typed('.typed', {
+    /**
+     * @property {array} strings strings to be typed
+     * @property {string} stringsElement ID of element containing string children
+     */
+    strings: [
+      '<i class"mascota"> E commerce Javascript </i>',
+     
+     
+    ],
+    stringsElement: null,
+  
+    /**
+     * @property {number} typeSpeed type speed in milliseconds
+     */
+    typeSpeed: 100,
+  
+    /**
+     * @property {number} startDelay time before typing starts in milliseconds
+     */
+    startDelay: 0,
+  
+    /**
+     * @property {number} backSpeed backspacing speed in milliseconds
+     */
+    backSpeed: 0,
+  
+    /**
+     * @property {boolean} smartBackspace only backspace what doesn't match the previous string
+     */
+    smartBackspace: true,
+  
+  
+  });

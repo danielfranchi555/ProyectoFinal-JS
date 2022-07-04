@@ -1,0 +1,29 @@
+.css-button-fully-rounded--sky {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid #4433ff;
+    background: #4433ff;
+  }
+  .css-button-fully-rounded--sky:hover {
+    background: #fff;
+    color: #4433ff
+  }
+
+.titulo{
+    text-align: center;
+    color: blue;
+}
+  .mascota{
+    text-align: center;
+    color: rgb(28, 12, 204);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
