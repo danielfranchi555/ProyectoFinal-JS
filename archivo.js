@@ -13,7 +13,7 @@ function renderizarProductos() {
     //renderizamos los productos 
    console.log(productosJSON)
     for (const prod of productosJSON) {
-        document.getElementById("miLista").innerHTML+=`<li class=" cards col-sm-3 list-group-item">
+        document.getElementById("miLista").innerHTML+=`<li class="  col-sm-3 list-group-item">
         <img src="${prod.img}"width="250px" height="250px">
         <p>Producto:${prod.nombre}</p>
         <p>Precio:${prod.precio}</p>
