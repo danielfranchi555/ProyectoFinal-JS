@@ -2,8 +2,6 @@ let carrito = [];
 let productosJSON = [];
 
   window.onload=()=>{
-      document.querySelector("#fila_prueba").style.background="red";
-      o
       document.querySelector("#miSeleccion option[value='pordefecto']").setAttribute("selected", true);
       document.querySelector("#miSeleccion").onchange=()=>ordenar();
   };
@@ -122,6 +120,8 @@ async function obtenerJSON() {
 }
 obtenerJSON();
 
+
+/* EFECTOS JS */
   var typed = new Typed('.typed', {
     /**
      * @property {array} strings strings to be typed
