@@ -19,8 +19,10 @@
     background: #fff;
     color: #4433ff
   }
-
+.contenedor{
+  background-color: #4433ff88;
+}
 .titulo{
     text-align: center;
-    color: rgb(47, 47, 133);
+    color: rgba(160, 160, 177, 0.557);
 }
