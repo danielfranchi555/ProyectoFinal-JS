@@ -34,7 +34,7 @@ function renderizarProductos() {
 class ProductoCarrito {
     constructor(objProd) {
         this.id = objProd.id;
-        this.img = objProd.foto;
+        this.img = objProd.img;
         this.nombre = objProd.nombre;
         this.precio = objProd.precio;
         this.cantidad = 1;
@@ -76,17 +76,17 @@ function agregarACarrito(productoNuevo) {
 function CalcularTotal() {
     let suma = 0;
     for (const elemento of carrito) {
-        suma = suma + (elemento.precio*elemento.cantidad);
+        suma = suma + (elemento.precio * elemento.cantidad);
     }
     return suma;
 }
-
+console.log
 function eliminar(id){
     let indice=carrito.findIndex(prod => prod.id==id);
     carrito.splice(indice,1);
     let fila=document.getElementById(`fila${id}`);
     document.getElementById("tablabody").removeChild(fila);
-    document.querySelector("#gastoTotal").innerText=(`Total: $ ${CalcularTotal()}`);
+    document.getElementById("gastoTotal").innerText=(`Total: $ ${CalcularTotal()}`);
 }
 
  function ordenar() {
