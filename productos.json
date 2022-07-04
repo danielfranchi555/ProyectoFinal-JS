@@ -2,7 +2,7 @@
 [ 
     {
     "id": "1",
-    "img":"../img/buzo-1.jpg",
+    "img":"/img/buzo-1.jpg",
     "nombre":"BuzoVans",
     "precio": "$3500"
    },

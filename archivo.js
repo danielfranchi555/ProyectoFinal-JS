@@ -15,7 +15,7 @@ function renderizarProductos() {
     //renderizamos los productos 
    console.log(productosJSON)
     for (const prod of productosJSON) {
-        document.getElementById("miLista").innerHTML+=`<li class="col-sm-3 list-group-item">
+        document.getElementById("miLista").innerHTML+=`<li class=" cards col-sm-3 list-group-item">
         <img src="${prod.img}"width="250px" height="250px">
         <p>Producto:${prod.nombre}</p>
         <p>Precio:${prod.precio}</p>
@@ -122,12 +122,6 @@ async function obtenerJSON() {
 }
 obtenerJSON();
 
-
-/* var typed = new Typed('.typed', {
-    // Waits 1000ms after typing "First"
-    strings: ['E commerce ^1000 Javascript.',]
-  });
- */
   var typed = new Typed('.typed', {
     /**
      * @property {array} strings strings to be typed
@@ -145,20 +139,6 @@ obtenerJSON();
      */
     typeSpeed: 100,
   
-    /**
-     * @property {number} startDelay time before typing starts in milliseconds
-     */
-    startDelay: 0,
-  
-    /**
-     * @property {number} backSpeed backspacing speed in milliseconds
-     */
-    backSpeed: 0,
-  
-    /**
-     * @property {boolean} smartBackspace only backspace what doesn't match the previous string
-     */
-    smartBackspace: true,
   
   
   });
