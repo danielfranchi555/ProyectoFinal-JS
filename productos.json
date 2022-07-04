@@ -2,49 +2,49 @@
 [ 
     {
     "id": "1",
-    "img":"/img/buzo-1.jpg",
+    "img":"img/buzo-1.jpg",
     "nombre":"BuzoVans",
     "precio": "$3500"
    },
    {
     "id":"2",
-     "img":"/img/remera-1.jpg",
+     "img":"img/remera-1.jpg",
      "nombre":"Remera Adidas",
      "precio":"$3200" 
    },
    {
      "id":"3",
-     "img":"/img/remera-3.jpg",
+     "img":"img/remera-3.jpg",
      "nombre":"Remera Nike",
      "precio": " $2900"
    },
    {
     "id":"4",
-     "img":"/img/remera-4.jpg",
+     "img":"img/remera-4.jpg",
      "nombre":"Remera vans",
      "precio": "$4100"
    },
    {
     "id":"5",
-     "img":"/img/remera-5.jpg",
+     "img":"img/remera-5.jpg",
      "nombre":"Remera Vans roja ",
      "precio": "$2500"
    },
    {
     "id":"6",
-     "img":"/img/remera-6.jpg",
+     "img":"img/remera-6.jpg",
      "nombre":"Remera Adidas gris",
      "precio": "$3200"
    },
    {
     "id":"7",
-     "img":"/img/campera-1.jpg",
+     "img":"img/campera-1.jpg",
      "nombre":"Campera Adidas",
      "precio": "$16000"
    },
    {
     "id":"8",
-     "img":"/img/camperon.jpg",
+     "img":"img/camperon.jpg",
      "nombre":"Campera North face",
      "precio": "$4100"
    }   
